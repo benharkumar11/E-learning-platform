@@ -1,12 +1,14 @@
-require("dotenv").config() // Load .env variables
+import dotenv from 'dotenv'
+import express from 'express'
 
-const express = require("express")
+dotenv.config() // Load .env variables
+
 const app = express()
 
 app.use(express.json())
 
 // Test route to check if .env is working
-app.get("/", (req, res) => {
+app.get('/', (req, res) => {
   res.send(`Server is running on port ${process.env.PORT}`)
 })
 
